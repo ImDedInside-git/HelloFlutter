@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/pages/newStatusWidget.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,9 +8,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    var materialApp = MaterialApp(
       // Application name
-      title: 'Flutter Hello World',
+      // title: 'Flutter Hello World',
+
+      initialRoute: '/myInfo',
+      routes: {'/myInfo': (context) => MyInformation()},
+
       // Application theme data, you can set the colors for the application as
       // you want
       theme: ThemeData(
@@ -19,12 +24,13 @@ class MyApp extends StatelessWidget {
       // A widget which will be started on application startup
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
+    return materialApp;
   }
 }
 
 class MyHomePage extends StatelessWidget {
   final String title;
-  const MyHomePage({super.key, required this.title});  
+  const MyHomePage({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
